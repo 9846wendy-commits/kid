@@ -383,9 +383,35 @@
         onclick="switchView('home')"
       >
         <div
-          class="w-11 h-11 bg-purple-100 rounded-full flex items-center justify-center text-white text-2xl brand-font shadow-md floating"
+          class="w-11 h-11 bg-[#FFFFFF] rounded-full flex items-center justify-center shadow-md floating overflow-hidden border-2 border-teal-200"
         >
-          🍭
+          <svg
+            viewBox="0 0 400 400"
+            xmlns="http://www.w3.org/2000/svg"
+            class="w-[90%] h-[90%] mt-1"
+          >
+            <!-- 左星星 -->
+            <g transform="translate(20, 30)">
+              <polygon
+                points="75,0 91.5,52.5 147,52.5 102,85.5 118.5,136.5 75,105 31.5,136.5 48,85.5 3,52.5 58.5,52.5"
+                fill="#63433F"
+                transform="rotate(-18 75 75)"
+              />
+            </g>
+            <!-- 右星星 -->
+            <g transform="translate(230, 30)">
+              <polygon
+                points="75,0 91.5,52.5 147,52.5 102,85.5 118.5,136.5 75,105 31.5,136.5 48,85.5 3,52.5 58.5,52.5"
+                fill="#63433F"
+                transform="rotate(18 75 75)"
+              />
+            </g>
+            <!-- 臉與五官 -->
+            <circle cx="200" cy="240" r="160" fill="#DDBDF2" />
+            <circle cx="163" cy="206" r="11" fill="#000000" />
+            <circle cx="200" cy="206" r="10" fill="#A38F52" />
+            <circle cx="237" cy="206" r="11" fill="#000000" />
+          </svg>
         </div>
         <h1 class="text-2xl md:text-3xl text-teal-600 brand-font tracking-wide">
           Phonics Friends
@@ -667,14 +693,7 @@
         id="view-boss-map"
         class="hidden animate-fade-in relative w-full flex flex-col"
       >
-        <div class="flex justify-start relative z-20 w-full mb-2">
-          <button
-            onclick="switchView('home')"
-            class="bg-white border-2 border-gray-300 text-gray-700 px-5 py-2 rounded-full font-bold hover:bg-gray-50 flex items-center gap-2 shadow-sm transition-transform hover:-translate-x-1"
-          >
-            <i class="fa-solid fa-arrow-left"></i> Home
-          </button>
-        </div>
+        <div class="flex justify-start relative z-20 w-full mb-2"></div>
 
         <!-- Owl Mascot Button -->
         <div
@@ -683,27 +702,51 @@
           onclick="clickMascotOwl()"
         >
           <div
-            id="owl-speech-bubble"
-            class="bg-white text-purple-900 border-2 border-purple-300 px-4 py-2 rounded-2xl rounded-br-none shadow-lg text-sm font-bold mb-2 animate-bounce flex items-center gap-2 max-w-xs transition-all duration-300"
+            class="w-20 h-20 bg-[#FFFFFF] rounded-full border-4 border-white shadow-2xl floating group-hover:scale-110 transition-transform relative"
           >
-            <span>👩‍🏫</span> <span>Custom Game!</span>
-          </div>
-          <div
-            class="w-20 h-20 bg-gradient-to-tr from-purple-500 to-indigo-400 rounded-full border-4 border-white shadow-2xl flex items-center justify-center text-4xl floating group-hover:scale-110 transition-transform relative"
-          >
-            🦉
+            <div
+              class="w-full h-full rounded-full overflow-hidden flex items-center justify-center"
+            >
+              <svg
+                viewBox="0 0 400 400"
+                xmlns="http://www.w3.org/2000/svg"
+                class="w-[90%] h-[90%] mt-2"
+              >
+                <!-- 左星星 -->
+                <g transform="translate(20, 30)">
+                  <polygon
+                    points="75,0 91.5,52.5 147,52.5 102,85.5 118.5,136.5 75,105 31.5,136.5 48,85.5 3,52.5 58.5,52.5"
+                    fill="#63433F"
+                    transform="rotate(-18 75 75)"
+                  />
+                </g>
+                <!-- 右星星 -->
+                <g transform="translate(230, 30)">
+                  <polygon
+                    points="75,0 91.5,52.5 147,52.5 102,85.5 118.5,136.5 75,105 31.5,136.5 48,85.5 3,52.5 58.5,52.5"
+                    fill="#63433F"
+                    transform="rotate(18 75 75)"
+                  />
+                </g>
+                <!-- 臉與五官 -->
+                <circle cx="200" cy="240" r="160" fill="#DDBDF2" />
+                <circle cx="163" cy="206" r="11" fill="#000000" />
+                <circle cx="200" cy="206" r="10" fill="#A38F52" />
+                <circle cx="237" cy="206" r="11" fill="#000000" />
+              </svg>
+            </div>
             <span
-              class="absolute -top-1 -right-1 bg-yellow-400 text-purple-900 text-xs px-2 py-0.5 rounded-full font-extrabold border-2 border-white shadow"
+              class="absolute -top-1 -right-1 bg-yellow-400 text-purple-900 text-xs px-2 py-0.5 rounded-full font-extrabold border-2 border-white shadow z-10"
               >Custom</span
             >
           </div>
         </div>
 
-        <div class="text-center mb-6 relative z-20">
+        <div class="text-center mb-6 relative z-20 mt-4">
           <h2
-            class="text-4xl md:text-6xl text-purple-300 brand-font drop-shadow-md"
+            class="inline-block bg-white border-2 border-gray-300 px-8 py-3 rounded-full shadow-sm text-4xl md:text-6xl text-purple-300 brand-font drop-shadow-md"
           >
-            Phonics Map
+            Phonics Game
           </h2>
         </div>
 
@@ -712,28 +755,6 @@
           id="boss-map-scroll-container"
           class="relative w-full max-w-5xl mx-auto h-[65vh] min-h-[450px] mt-2 mb-8"
         >
-          <!-- 關卡之間的虛線背景連線 -->
-          <svg
-            class="absolute inset-0 w-full h-full pointer-events-none z-0"
-            style="
-              stroke: #5eead4;
-              stroke-width: 8px;
-              stroke-dasharray: 12 12;
-              stroke-linecap: round;
-            "
-          >
-            <!-- 1 到 2 -->
-            <line x1="15%" y1="75%" x2="30%" y2="25%" />
-            <!-- 2 到 3 -->
-            <line x1="30%" y1="25%" x2="50%" y2="70%" />
-            <!-- 3 到 4 -->
-            <line x1="50%" y1="70%" x2="65%" y2="30%" />
-            <!-- 4 到 5 -->
-            <line x1="65%" y1="30%" x2="80%" y2="65%" />
-            <!-- 5 到 魔王 (改成金色線條) -->
-            <line x1="80%" y1="65%" x2="90%" y2="20%" style="stroke: #facc15" />
-          </svg>
-
           <!-- ================= 第1區 (A-E) 左下 ================= -->
           <div
             class="absolute left-[15%] top-[75%] -translate-x-1/2 -translate-y-1/2 group flex flex-col items-center cursor-pointer z-20"
@@ -1006,9 +1027,7 @@
                       class="text-lg font-bold text-teal-600 tracking-wide block brand-font"
                       >Teacher Studio</span
                     >
-                    <span class="text-xs font-semibold text-slate-400"
-                      >Teacher Preparation</span
-                    >
+                    <span class="text-xs font-semibold text-slate-400"></span>
                   </div>
                 </div>
                 <button
@@ -1048,7 +1067,7 @@
                   <i
                     class="fa-solid fa-file-pdf mr-3 text-teal-500 text-lg"
                   ></i>
-                  Download Worksheets
+                  Download All Worksheets
                 </button>
 
                 <button
@@ -1056,7 +1075,7 @@
                   class="flex items-center px-4 py-3 rounded-xl text-slate-700 hover:bg-slate-50 transition-all font-semibold border-2 border-transparent hover:border-slate-200 w-full text-left"
                 >
                   <i class="fa-solid fa-images mr-3 text-slate-400 text-lg"></i>
-                  Download Flashcards
+                  Download All Flashcards
                 </button>
               </nav>
 
@@ -1175,7 +1194,7 @@
                       id="teacher-grid-letter"
                       class="text-teal-600 brand-font"
                       >A</span
-                    >: Resource
+                    >
                   </h1>
                   <p
                     class="text-slate-500 font-semibold text-xs md:text-sm m-0"
@@ -1261,7 +1280,7 @@
                     <!-- Bottom Download Flashcards Button -->
                     <div class="mt-6">
                       <button
-                        onclick="triggerFlashcardPrint()"
+                        onclick="downloadLetterPDF('flashcard')"
                         class="w-full bg-sky-500 hover:bg-sky-600 text-white font-bold py-3.5 px-6 rounded-full shadow-[0_4px_0_0_#0284c7] transition-all hover:scale-[1.01] active:translate-y-1 active:shadow-none flex items-center justify-center gap-2 text-base md:text-lg"
                       >
                         <i class="fa-solid fa-images text-xl"></i>
@@ -1293,6 +1312,7 @@
                       class="bg-rose-50/80 rounded-2xl p-5 border-l-4 border-rose-500 mb-4"
                     >
                       <p
+                        id="teacher-tip-quote"
                         class="text-base md:text-lg font-bold text-slate-800 m-0 leading-relaxed"
                       >
                         "Look kids! This is an angry apple... making the
@@ -1337,24 +1357,18 @@
 
                       <!-- Worksheet Preview Box -->
                       <div
-                        onclick="triggerFlashcardPrint()"
+                        onclick="downloadLetterPDF('worksheet')"
                         class="flex flex-col items-center justify-center bg-emerald-50/50 rounded-2xl border-2 border-dashed border-emerald-300 p-6 mb-6 group cursor-pointer hover:bg-emerald-50 transition-colors"
                       >
                         <div
-                          class="relative w-44 aspect-[1/1.3] bg-white shadow-md rounded-xl border border-slate-200 overflow-hidden transform group-hover:-translate-y-1 transition-transform duration-300 flex flex-col items-center justify-center p-4 text-center"
+                          class="relative w-44 aspect-[1/1.3] bg-white shadow-md rounded-xl border border-slate-200 overflow-hidden transform group-hover:-translate-y-1 transition-transform duration-300 flex items-center justify-center"
                         >
-                          <div class="text-4xl mb-2">📝</div>
-                          <div class="font-extrabold text-slate-800 text-lg">
-                            Letter A
-                          </div>
-                          <div class="text-xs text-slate-500 font-semibold">
-                            Tracing & Coloring
-                          </div>
-                          <div
-                            class="mt-3 text-xs bg-emerald-100 text-emerald-800 font-bold px-2 py-1 rounded-md"
-                          >
-                            Worksheet
-                          </div>
+                          <img
+                            id="teacher-worksheet-preview"
+                            src="./pdfs/A_worksheet.jpeg"
+                            alt="Worksheet"
+                            class="w-full h-full object-cover"
+                          />
                         </div>
                         <p
                           id="teacher-print-subtitle"
@@ -1366,7 +1380,7 @@
                     </div>
 
                     <button
-                      onclick="triggerFlashcardPrint()"
+                      onclick="downloadLetterPDF('worksheet')"
                       class="w-full bg-emerald-500 hover:bg-emerald-600 text-white font-bold py-3.5 px-6 rounded-full shadow-[0_4px_0_0_#059669] transition-all hover:scale-[1.01] active:translate-y-1 active:shadow-none flex items-center justify-center gap-2 text-base md:text-lg"
                     >
                       <i class="fa-solid fa-download text-xl"></i>
@@ -1413,13 +1427,13 @@
             class="w-52 h-52 border-4 border-dashed border-teal-300 rounded-3xl bg-teal-50/50 flex flex-col items-center justify-center text-teal-400 transition-colors cursor-pointer"
           >
             <i class="fa-solid fa-download text-4xl mb-2"></i>
-            <span class="font-bold text-lg">拉到這裡 / 點擊這裡！</span>
+            <span class="font-bold text-lg"></span>
           </div>
           <div id="g1-success-msg" class="hidden mt-6 flex-col items-center">
             <div
               class="text-3xl font-bold text-emerald-500 animate-bounce mb-4"
             >
-              🎉 太棒了！答對囉！
+              🎉 Great Job！
             </div>
             <button
               onclick="switchView('game-2')"
@@ -1555,7 +1569,7 @@
               onclick="completeAreaAndReturnToMap()"
               class="btn-3d-yellow px-8 py-3 rounded-full font-bold text-lg"
             >
-              完成挑戰，領取獎勵！ ➔
+              Wonderful⭐️！ ➔
             </button>
           </div>
         </div>
@@ -1576,9 +1590,7 @@
           <h3 class="text-3xl md:text-5xl brand-font text-amber-600 mb-2">
             A-Z 終極發音大檢定
           </h3>
-          <p class="text-gray-600 font-bold mb-6">
-            連續答對問題即可奪得大金杯！
-          </p>
+          <p class="text-gray-600 font-bold mb-6"></p>
           <div
             class="w-full bg-gray-200 rounded-full h-4 mb-6 overflow-hidden border border-gray-300"
           >
@@ -1706,9 +1718,7 @@
             <h3 class="text-2xl font-black text-sky-700 brand-font">
               客製化遊戲
             </h3>
-            <p class="text-sm text-sky-600 font-bold">
-              點選字母，幫小朋友準備專屬的特訓關卡吧！
-            </p>
+            <p class="text-sm text-sky-600 font-bold"></p>
           </div>
         </div>
 
@@ -1798,7 +1808,7 @@
           phonetic: "/æ/",
           word: "Angry Apple",
           emoji: "🍎",
-          video: "Angry_apple.mp4",
+          video: "./videos/Angry_apple.mp4",
           tip: "Focus ONLY on short /æ/ (Apple, Ant).",
           story:
             "A is for Angry Apple! The apple was mad because it got bumped by an ant.",
@@ -1806,23 +1816,47 @@
             { word: "Apple", emoji: "🍎" },
             { word: "Ant", emoji: "🐜" },
             { word: "Ax", emoji: "🪓" },
-            { word: "Alligator", emoji: "🐊" },
+            { word: "Add", emoji: "➕" },
+          ],
+          extendedWords: [
+            "arrow",
+            "act",
+            "add",
+            "ankle",
+            "animal",
+            "anchor",
+            "ambulance",
+            "astronaut",
+            "album",
+            "actress",
           ],
         },
         B: {
           letter: "B",
           lower: "b",
           phonetic: "/b/",
-          word: "Bouncing Bear",
+          word: "Big Bear",
           emoji: "🐻",
-          video: "Brown_bear_waving_paws_202609021125.mp4",
+          video: "./videos/Brown_bear.mp4",
           tip: "Make a crisp /b/ sound by pressing lips together.",
-          story: "B is for Bouncing Bear playing with a shiny blue ball.",
+          story: "B is for Big Bear playing with a shiny blue ball.",
           words: [
             { word: "Bear", emoji: "🐻" },
             { word: "Ball", emoji: "⚽" },
             { word: "Banana", emoji: "🍌" },
             { word: "Bird", emoji: "🐦" },
+          ],
+          extendedWords: [
+            "ball",
+            "boy",
+            "book",
+            "bee",
+            "bag",
+            "bus",
+            "bat",
+            "bug",
+            "bell",
+            "boat",
           ],
         },
         C: {
@@ -1831,7 +1865,7 @@
           phonetic: "/k/",
           word: "Cool Cat",
           emoji: "🐱",
-          video: "Cat_wearing_sunglasses_nodding_202609021125.mp4",
+          video: "./videos/Cool_cat.mp4",
           tip: "Focus on hard /k/ sound.",
           story: "Cool Cat has a cup in the car and a can.",
           words: [
@@ -1840,6 +1874,18 @@
             { word: "Car", emoji: "🚗" },
             { word: "Can", emoji: "🥫" },
           ],
+          extendedWords: [
+            "cow",
+            "cap",
+            "candy",
+            "cold",
+            "color",
+            "can",
+            "cut",
+            "cake",
+            "coat",
+            "cookie",
+          ],
         },
         D: {
           letter: "D",
@@ -1847,7 +1893,7 @@
           phonetic: "/d/",
           word: "Daddy Dog",
           emoji: "🐶",
-          video: "Golden_retriever_dog_smiling_202609021126.mp4",
+          video: "./videos/Daddy_dog.mp4",
           tip: "Light tap for /d/.",
           story: "Daddy Dog and dad saw a duck at the door.",
           words: [
@@ -1855,6 +1901,18 @@
             { word: "Dad", emoji: "👨" },
             { word: "Duck", emoji: "🦆" },
             { word: "Door", emoji: "🚪" },
+          ],
+          extendedWords: [
+            "door",
+            "dad",
+            "day",
+            "dance",
+            "dig",
+            "drum",
+            "deer",
+            "dish",
+            "donkey",
+            "dolphin",
           ],
         },
         E: {
@@ -1871,6 +1929,18 @@
             { word: "Elf", emoji: "🧝" },
             { word: "Empty", emoji: "🫙" },
           ],
+          extendedWords: [
+            "elf",
+            "empty",
+            "enter",
+            "end",
+            "engine",
+            "extra",
+            "eagle",
+            "ear",
+            "exit",
+            "elastic",
+          ],
         },
         F: {
           letter: "F",
@@ -1885,6 +1955,18 @@
             { word: "Fat", emoji: "🐡" },
             { word: "Fan", emoji: "🪭" },
             { word: "Frog", emoji: "🐸" },
+          ],
+          extendedWords: [
+            "frog",
+            "fox",
+            "face",
+            "foot",
+            "fly",
+            "fire",
+            "flower",
+            "feet",
+            "feather",
+            "fruit",
           ],
         },
         G: {
@@ -1901,6 +1983,18 @@
             { word: "Good", emoji: "👍" },
             { word: "Game", emoji: "🎮" },
           ],
+          extendedWords: [
+            "good",
+            "green",
+            "grass",
+            "game",
+            "gum",
+            "garden",
+            "gate",
+            "grapes",
+            "gold",
+            "guitar",
+          ],
         },
         H: {
           letter: "H",
@@ -1915,6 +2009,18 @@
             { word: "Happy", emoji: "😊" },
             { word: "Hen", emoji: "🐔" },
             { word: "Hot", emoji: "☕" },
+          ],
+          extendedWords: [
+            "hen",
+            "hand",
+            "hot",
+            "head",
+            "hair",
+            "happy",
+            "hello",
+            "heart",
+            "hill",
+            "hippo",
           ],
         },
         I: {
@@ -1931,6 +2037,18 @@
             { word: "Ink", emoji: "🖋️" },
             { word: "Igloo", emoji: "🧊" },
           ],
+          extendedWords: [
+            "inside",
+            "itch",
+            "inch",
+            "infant",
+            "island",
+            "iron",
+            "ice",
+            "idea",
+            "ill",
+            "image",
+          ],
         },
         J: {
           letter: "J",
@@ -1945,6 +2063,18 @@
             { word: "Jump", emoji: "🦘" },
             { word: "Jam", emoji: "🍓" },
             { word: "Jet", emoji: "✈️" },
+          ],
+          extendedWords: [
+            "jump",
+            "jelly",
+            "jar",
+            "joy",
+            "job",
+            "jog",
+            "jungle",
+            "jellyfish",
+            "jeep",
+            "jeans",
           ],
         },
         K: {
@@ -1961,6 +2091,18 @@
             { word: "King", emoji: "👑" },
             { word: "Key", emoji: "🔑" },
           ],
+          extendedWords: [
+            "kick",
+            "kiss",
+            "kitten",
+            "kiwi",
+            "kitchen",
+            "koala",
+            "kettle",
+            "keyboard",
+            "kid",
+            "kayak",
+          ],
         },
         L: {
           letter: "L",
@@ -1975,6 +2117,18 @@
             { word: "Little", emoji: "🤏" },
             { word: "Leg", emoji: "🦵" },
             { word: "Lip", emoji: "👄" },
+          ],
+          extendedWords: [
+            "leg",
+            "log",
+            "lip",
+            "lock",
+            "look",
+            "love",
+            "lake",
+            "ladder",
+            "lizard",
+            "ladybug",
           ],
         },
         M: {
@@ -1991,6 +2145,18 @@
             { word: "Milk", emoji: "🥛" },
             { word: "Monkey", emoji: "🐒" },
           ],
+          extendedWords: [
+            "moon",
+            "mom",
+            "map",
+            "mat",
+            "man",
+            "mouth",
+            "mug",
+            "mop",
+            "melon",
+            "mask",
+          ],
         },
         N: {
           letter: "N",
@@ -2005,6 +2171,18 @@
             { word: "Nine", emoji: "9️⃣" },
             { word: "Net", emoji: "🕸️" },
             { word: "Nose", emoji: "👃" },
+          ],
+          extendedWords: [
+            "night",
+            "no",
+            "name",
+            "nail",
+            "neck",
+            "nine",
+            "notebook",
+            "needle",
+            "nurse",
+            "newspaper",
           ],
         },
         O: {
@@ -2021,6 +2199,18 @@
             { word: "Ox", emoji: "🐂" },
             { word: "On", emoji: "🔛" },
           ],
+          extendedWords: [
+            "on",
+            "off",
+            "otter",
+            "odd",
+            "office",
+            "October",
+            "orange",
+            "onion",
+            "owl",
+            "oven",
+          ],
         },
         P: {
           letter: "P",
@@ -2035,6 +2225,18 @@
             { word: "Pink", emoji: "🩷" },
             { word: "Pen", emoji: "🖊️" },
             { word: "Pan", emoji: "🍳" },
+          ],
+          extendedWords: [
+            "pencil",
+            "pan",
+            "pink",
+            "park",
+            "pie",
+            "pot",
+            "pear",
+            "pig",
+            "pizza",
+            "pillow",
           ],
         },
         Q: {
@@ -2051,6 +2253,18 @@
             { word: "Quick", emoji: "⚡" },
             { word: "Quack", emoji: "🦆" },
           ],
+          extendedWords: [
+            "quiet",
+            "quick",
+            "quack",
+            "quarter",
+            "queue",
+            "quail",
+            "quokka",
+            "quill",
+            "quart",
+            "quake",
+          ],
         },
         R: {
           letter: "R",
@@ -2065,6 +2279,18 @@
             { word: "Red", emoji: "🔴" },
             { word: "Run", emoji: "🏃" },
             { word: "Rain", emoji: "🌧️" },
+          ],
+          extendedWords: [
+            "rat",
+            "red",
+            "run",
+            "rain",
+            "ring",
+            "rope",
+            "rock",
+            "rug",
+            "ruler",
+            "radio",
           ],
         },
         S: {
@@ -2081,6 +2307,18 @@
             { word: "Sun", emoji: "☀️" },
             { word: "Sit", emoji: "🪑" },
           ],
+          extendedWords: [
+            "spider",
+            "star",
+            "sit",
+            "stand",
+            "snow",
+            "sky",
+            "sad",
+            "snake",
+            "spoon",
+            "slide",
+          ],
         },
         T: {
           letter: "T",
@@ -2095,6 +2333,18 @@
             { word: "Tall", emoji: "🦒" },
             { word: "Ten", emoji: "🔟" },
             { word: "Tiger", emoji: "🐅" },
+          ],
+          extendedWords: [
+            "ten",
+            "two",
+            "tea",
+            "top",
+            "toe",
+            "tooth",
+            "train",
+            "table",
+            "truck",
+            "toy",
           ],
         },
         U: {
@@ -2111,6 +2361,18 @@
             { word: "Up", emoji: "⬆️" },
             { word: "Under", emoji: "⬇️" },
           ],
+          extendedWords: [
+            "under",
+            "ugly",
+            "us",
+            "upset",
+            "upper",
+            "unlock",
+            "unicorn",
+            "unhappy",
+            "unit",
+            "underwater",
+          ],
         },
         V: {
           letter: "V",
@@ -2125,6 +2387,18 @@
             { word: "Vet", emoji: "🧑‍⚕️" },
             { word: "Vest", emoji: "🦺" },
             { word: "Vase", emoji: "🏺" },
+          ],
+          extendedWords: [
+            "vase",
+            "video",
+            "voice",
+            "view",
+            "volcano",
+            "valley",
+            "vegetable",
+            "vulture",
+            "vacuum",
+            "vine",
           ],
         },
         W: {
@@ -2141,6 +2415,18 @@
             { word: "Water", emoji: "🌊" },
             { word: "Win", emoji: "🏆" },
           ],
+          extendedWords: [
+            "window",
+            "walk",
+            "wall",
+            "wind",
+            "wig",
+            "wagon",
+            "worm",
+            "whale",
+            "wing",
+            "wave",
+          ],
         },
         X: {
           letter: "X",
@@ -2155,6 +2441,18 @@
             { word: "Box", emoji: "📦" },
             { word: "Six", emoji: "6️⃣" },
             { word: "Mix", emoji: "🥣" },
+          ],
+          extendedWords: [
+            "mix",
+            "fix",
+            "tax",
+            "tux",
+            "Rex",
+            "X-ray",
+            "max",
+            "flex",
+            "apex",
+            "text",
           ],
         },
         Y: {
@@ -2171,6 +2469,18 @@
             { word: "Yes", emoji: "✔️" },
             { word: "Yell", emoji: "🗣️" },
           ],
+          extendedWords: [
+            "yellow",
+            "yes",
+            "you",
+            "yarn",
+            "yard",
+            "yolk",
+            "yell",
+            "yam",
+            "yawn",
+            "year",
+          ],
         },
         Z: {
           letter: "Z",
@@ -2186,10 +2496,20 @@
             { word: "Zero", emoji: "0️⃣" },
             { word: "Zip", emoji: "🤐" },
           ],
+          extendedWords: [
+            "zip",
+            "zigzag",
+            "zombie",
+            "zoom",
+            "zap",
+            "zone",
+            "zookeeper",
+            "zebu",
+            "zest",
+            "zucchini",
+          ],
         },
-      };
-
-      // 自訂特訓資料
+      }; // 自訂特訓資料
       let selectedCustomLettersSet = new Set(["A", "J", "S", "H"]);
       let customTrainings = [{ id: Date.now(), letters: ["A", "J", "S", "H"] }];
 
@@ -2320,6 +2640,16 @@
         const container = document.getElementById("bubble-container");
         if (container) container.innerHTML = "";
         activeBubbles = [];
+        bubbleGameScore = 0;
+        const scoreDisplay = document.getElementById("bubble-score-display");
+        if (scoreDisplay) scoreDisplay.innerText = "0";
+
+        document
+          .getElementById("bubble-start-overlay")
+          ?.classList.remove("hidden");
+        document.getElementById("bubble-start-overlay")?.classList.add("flex");
+        document.getElementById("bubble-win-overlay")?.classList.add("hidden");
+        document.getElementById("bubble-win-overlay")?.classList.remove("flex");
       }
 
       function switchView(viewId) {
@@ -2488,9 +2818,15 @@
           if (data.video) {
             mediaContainer.classList.remove("floating");
             mediaContainer.innerHTML = `
-                        <div class="w-full max-w-xl aspect-video rounded-3xl shadow-2xl border-4 border-red-200 overflow-hidden bg-black flex items-center justify-center">
-                            <video src="${data.video}" controls playsinline preload="metadata" class="w-full h-full object-contain bg-black"></video>
-                        </div>`;
+                            <div class="w-full max-w-xl aspect-video rounded-3xl shadow-2xl border-4 border-red-200 overflow-hidden bg-black flex items-center justify-center">
+                                <video
+                                  class="w-full h-full object-contain bg-black"
+                                  controls
+                                  playsinline
+                                  preload="metadata"
+                                  src="${data.video}">
+                                </video>
+                            </div>`;
           } else {
             mediaContainer.classList.add("floating");
             mediaContainer.innerHTML = `<div id="letter-hero-emoji" class="text-[120px] md:text-[150px] filter drop-shadow-lg">${data.emoji}</div>`;
@@ -2526,9 +2862,9 @@
           card.className =
             "letter-card bg-white rounded-3xl p-4 flex flex-col items-center justify-center cursor-pointer border-2 border-slate-100 hover:border-teal-300 hover-bounce";
           card.innerHTML = `
-                    <span class="text-5xl mb-2">${item.emoji}</span>
-                    <span class="text-3xl brand-font text-teal-600">${item.letter}${item.lower}</span>
-                `;
+                                                      <span class="text-5xl mb-2">${item.emoji}</span>
+                                                      <span class="text-3xl brand-font text-teal-600">${item.letter}${item.lower}</span>
+                                                  `;
           grid.appendChild(card);
         });
       }
@@ -2548,10 +2884,10 @@
           card.className =
             "bg-green-50/80 border-2 border-green-200 rounded-2xl p-4 flex flex-col items-center justify-center cursor-pointer hover:bg-green-100 hover:scale-105 transition-all shadow-sm";
           card.innerHTML = `
-                    <span class="text-5xl mb-2">${w.emoji}</span>
-                    <span class="font-bold text-gray-800 text-lg">${w.word}</span>
-                    <span class="text-xs text-green-700 font-semibold">${data.phonetic}</span>
-                `;
+                                                      <span class="text-5xl mb-2">${w.emoji}</span>
+                                                      <span class="font-bold text-gray-800 text-lg">${w.word}</span>
+                                                      <span class="text-xs text-green-700 font-semibold">${data.phonetic}</span>
+                                                  `;
           grid.appendChild(card);
         });
       }
@@ -2626,7 +2962,7 @@
             if (isTarget) {
               bubbleGameScore++;
               if (scoreDisplay) scoreDisplay.innerText = bubbleGameScore;
-              speakText(bubbleData.letter);
+              speakText(bubbleData.lower);
               if (bubbleGameScore >= 10) {
                 stopBubbleGame();
                 playSynthesizedSound("win");
@@ -2690,9 +3026,9 @@
         const dropzone = document.getElementById("g1-dropzone");
         if (dropzone) {
           dropzone.innerHTML = `
-                    <i class="fa-solid fa-download text-4xl mb-2"></i>
-                    <span class="font-bold text-lg">拉到這裡 / 點擊這裡！</span>
-                `;
+                                                      <i class="fa-solid fa-download text-4xl mb-2"></i>
+                                                      <span class="font-bold text-lg"></span>
+                                                  `;
         }
         document.getElementById("g1-success-msg")?.classList.add("hidden");
       }
@@ -2791,8 +3127,8 @@
               borderColors[idx % borderColors.length]
             } rounded-2xl p-4 h-40 flex flex-col items-center justify-center transition-colors`;
             basket.innerHTML = `
-                        <span class="text-4xl brand-font mb-1">${k}</span>
-                    `;
+                                                          <span class="text-4xl brand-font mb-1">${k}</span>
+                                                      `;
             basketsContainer.appendChild(basket);
           });
         }
@@ -3195,13 +3531,13 @@
           }`;
 
           card.innerHTML = `
-                    <span class="text-2xl sm:text-3xl brand-font">${letter}</span>
-                    ${
-                      isSelected
-                        ? '<div class="absolute -top-2 -right-2 w-5 h-5 rounded-full bg-pink-400 text-white text-[10px] flex items-center justify-center border-2 border-white shadow-sm"><i class="fa-solid fa-check"></i></div>'
-                        : ""
-                    }
-                `;
+                                                      <span class="text-2xl sm:text-3xl brand-font">${letter}</span>
+                                                      ${
+                                                        isSelected
+                                                          ? '<div class="absolute -top-2 -right-2 w-5 h-5 rounded-full bg-pink-400 text-white text-[10px] flex items-center justify-center border-2 border-white shadow-sm"><i class="fa-solid fa-check"></i></div>'
+                                                          : ""
+                                                      }
+                                                  `;
           grid.appendChild(card);
         });
 
@@ -3265,10 +3601,10 @@
           title.className =
             "font-bold text-sm flex-1 cursor-pointer flex items-center gap-2";
           title.innerHTML = `
-                    <span class="truncate pr-2">組合: <strong class="text-slate-700 tracking-wider">${training.letters.join(
-                      ", "
-                    )}</strong></span>
-                `;
+                                                      <span class="truncate pr-2">組合: <strong class="text-slate-700 tracking-wider">${training.letters.join(
+                                                        ", "
+                                                      )}</strong></span>
+                                                  `;
           title.onclick = () => playCustomGameMode(training.id);
 
           const actions = document.createElement("div");
@@ -3347,11 +3683,30 @@
         const printSub = document.getElementById("teacher-print-subtitle");
         const gridLetter = document.getElementById("teacher-grid-letter");
 
-        const targetVideo = data.video || "Angry_apple.mp4";
-        if (videoPlayer) {
-          if (!videoPlayer.src || !videoPlayer.src.includes(targetVideo)) {
-            videoPlayer.src = targetVideo;
-            videoPlayer.load();
+        // 動態切換預覽圖
+        const previewImg = document.getElementById("teacher-worksheet-preview");
+        if (previewImg) {
+          previewImg.src = `./pdfs/${currentLetterKey}_worksheet.jpeg`;
+        }
+
+        const videoContainer = document.getElementById(
+          "teacher-video-container"
+        );
+        if (videoContainer) {
+          if (data.video) {
+            videoContainer.innerHTML = `
+        <video
+          id="teacher-video-player"
+          class="w-full h-full object-contain bg-black"
+          controls
+          playsinline
+          preload="metadata"
+          src="${data.video}">
+        </video>
+      `;
+          } else {
+            // 如果該字母還沒上傳影片，顯示黑底提示
+            videoContainer.innerHTML = `<div class="w-full h-full flex items-center justify-center text-slate-500 font-bold bg-slate-900">影片建置中...</div>`;
           }
         }
 
@@ -3364,33 +3719,35 @@
           printSub.innerText = `Letter ${data.letter} Printable Flashcards & Worksheets`;
         if (gridLetter) gridLetter.innerText = data.letter;
 
+        // 動態替換 Teaching Tips 句子 (自動判斷 a / an)
+        const tipQuote = document.getElementById("teacher-tip-quote");
+        if (tipQuote) {
+          const firstChar = data.word.charAt(0).toLowerCase();
+          const article = ["a", "e", "i", "o", "u"].includes(firstChar)
+            ? "an"
+            : "a";
+          tipQuote.innerHTML = `"Look kids! This is ${article} ${data.word.toLowerCase()}... making the <strong class="text-rose-600 text-xl md:text-2xl mx-1 bg-white px-2 py-0.5 rounded-lg shadow-sm border border-rose-200">${
+            data.phonetic
+          }</strong> sound!"`;
+        }
+
+        // 替換單字列表
         const wordsGrid = document.getElementById("teacher-words-grid");
         if (wordsGrid) {
           wordsGrid.innerHTML = "";
-          data.words.forEach((w) => {
+          wordsGrid.className = "flex flex-wrap gap-3";
+
+          const extWords = data.extendedWords || [];
+          extWords.forEach((word) => {
             const item = document.createElement("div");
             item.className =
-              "flex items-center gap-4 p-4 rounded-2xl bg-sky-50/60 hover:bg-sky-50 transition-all border-2 border-transparent hover:border-sky-200 cursor-pointer hover:-translate-y-0.5 transform duration-200 shadow-sm";
-            item.onclick = () => speakText(w.word);
-            item.innerHTML = `
-                        <div class="w-14 h-14 rounded-full bg-white border-2 border-sky-100 flex items-center justify-center text-3xl flex-shrink-0 shadow-sm">${
-                          w.emoji
-                        }</div>
-                        <div>
-                            <p class="font-bold text-lg text-slate-800 m-0 leading-tight">${
-                              w.word
-                            }</p>
-                            <p class="text-xs font-semibold text-slate-500 m-0">${
-                              w.word === data.word
-                                ? "Core Word"
-                                : "Extended Word"
-                            }</p>
-                        </div>
-                    `;
+              "px-5 py-2.5 rounded-xl bg-sky-50 text-sky-700 font-extrabold text-lg border-2 border-sky-100 hover:bg-sky-100 hover:-translate-y-0.5 cursor-pointer shadow-sm transition-all text-center";
+            item.onclick = () => speakText(word);
+            item.innerText = word;
             wordsGrid.appendChild(item);
           });
         }
-      }
+      } // 👈 這次幫你把這個關鍵的關門括號補上了！
 
       function playTeacherVideo() {
         const videoPlayer = document.getElementById("teacher-video-player");
@@ -3415,7 +3772,8 @@
 
       function speakCurrentLetter() {
         const data = PHONICS_DB[currentLetterKey] || PHONICS_DB["A"];
-        speakText(`${data.letter}, ${data.phonetic}, ${data.word}`);
+        // 替換為只唸小寫字母，避免系統唸出 "Capital" 或整段句子
+        speakText(data.lower);
       }
 
       function speakCurrentLetterVideo() {
@@ -3428,43 +3786,36 @@
         );
       }
 
-      function triggerFlashcardPrint() {
-        const printArea = document.getElementById("print-area");
-        if (!printArea) return;
-        const data = PHONICS_DB[currentLetterKey] || PHONICS_DB["A"];
-
-        printArea.innerHTML = `
-                <div style="padding: 20px; font-family: sans-serif; text-align: center;">
-                    <h1 style="font-size: 48px; margin-bottom: 10px;">Phonics Worksheet - Letter ${
-                      data.letter
-                    }</h1>
-                    <div style="font-size: 100px; margin: 20px 0;">${
-                      data.emoji
-                    }</div>
-                    <h2 style="font-size: 36px; color: #333;">${data.letter}${
-          data.lower
-        } - ${data.word}</h2>
-                    <p style="font-size: 24px; color: #666;">Sound: ${
-                      data.phonetic
-                    }</p>
-                    <div style="margin-top: 40px; display: flex; justify-content: space-around;">
-                        ${data.words
-                          .map(
-                            (w) => `
-                            <div style="border: 2px dashed #aaa; padding: 20px; border-radius: 10px; width: 150px;">
-                                <div style="font-size: 50px;">${w.emoji}</div>
-                                <div style="font-size: 20px; font-weight: bold; margin-top: 10px;">${w.word}</div>
-                            </div>
-                        `
-                          )
-                          .join("")}
-                    </div>
-                </div>
-            `;
-
-        window.print();
+      // 下載全部的檔案 (給左側側邊欄使用)
+      function downloadGlobalPDF(type) {
+        const fileUrl =
+          type === "worksheet"
+            ? "./pdfs/All_Worksheets.jpeg"
+            : "./pdfs/All_Flashcards.jpeg";
+        const link = document.createElement("a");
+        link.href = fileUrl;
+        link.download = "";
+        document.body.appendChild(link);
+        link.click();
+        document.body.removeChild(link);
       }
 
+      // 下載單一字母的檔案 (給右側各自的按鈕使用)
+      function downloadLetterPDF(type) {
+        const fileUrl =
+          type === "worksheet"
+            ? `./pdfs/${currentLetterKey}_worksheet.jpeg`
+            : `./pdfs/${currentLetterKey}_flashcard.jpeg`;
+
+        const link = document.createElement("a");
+        link.href = fileUrl;
+        link.download = "";
+        document.body.appendChild(link);
+        link.click();
+        document.body.removeChild(link);
+      }
+
+      // 👇 下面這兩個原本的函數「保留不動」！
       function resetAllProgress() {
         unlockedGameStage = 1;
         updateMapNodeVisuals();
