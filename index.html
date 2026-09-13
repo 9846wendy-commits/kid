@@ -3814,9 +3814,11 @@
           type === "worksheet"
             ? "./pdfs/All_Worksheets.jpeg"
             : "./pdfs/All_Flashcards.jpeg";
+        const filename = type === "worksheet" ? "All_Worksheets.jpeg" : "All_Flashcards.jpeg";
         const link = document.createElement("a");
         link.href = fileUrl;
-        link.download = "";
+        link.download = filename;
+        link.target = "_blank";
         document.body.appendChild(link);
         link.click();
         document.body.removeChild(link);
@@ -3828,10 +3830,11 @@
           type === "worksheet"
             ? `./pdfs/${currentLetterKey}_worksheet.jpeg`
             : `./pdfs/${currentLetterKey}_flashcard.jpeg`;
-
+        const filename = `${currentLetterKey}_${type}.jpeg`;
         const link = document.createElement("a");
         link.href = fileUrl;
-        link.download = "";
+        link.download = filename;
+        link.target = "_blank";
         document.body.appendChild(link);
         link.click();
         document.body.removeChild(link);
